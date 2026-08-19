@@ -1,0 +1,14 @@
+# Managed by https://github.com/betich/dotfiles — edit the files in shell/,
+# not this symlink. Machine-specific settings belong in ~/.zshrc.local.
+
+# Resolve the repo location through the ~/.zshrc symlink.
+DOTFILES="${DOTFILES:-${${(%):-%N}:A:h:h}}"
+[ -d "$DOTFILES/shell" ] || DOTFILES="$HOME/.dotfiles"
+
+for _f in path aliases functions tools; do
+  [ -r "$DOTFILES/shell/$_f.zsh" ] && . "$DOTFILES/shell/$_f.zsh"
+done
+unset _f
+
+# Anything private or machine-specific (tokens, work paths, one-off aliases).
+[ -r "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"

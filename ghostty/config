@@ -1,0 +1,46 @@
+# Ghostty — single self-contained config (no preset/theme indirection).
+
+theme = TokyoNight
+font-family = "FiraCode Nerd Font"
+font-size = 11
+font-thicken = false
+font-feature = +calt,+liga,+ss01,+ss02,+ss03,+ss04,+ss05
+
+term = xterm-256color
+grapheme-width-method = unicode
+minimum-contrast = 1.2
+selection-background = #364a82
+
+window-padding-x = 16
+window-padding-y = 12
+window-theme = ghostty
+macos-titlebar-style = hidden
+confirm-close-surface = false
+resize-overlay = never
+
+cursor-style = bar
+cursor-style-blink = false
+cursor-opacity = 0.9
+
+copy-on-select = clipboard
+mouse-scroll-multiplier = 0.95
+
+shell-integration-features = no-cursor,ssh-env
+
+# ── Keybinds ──────────────────────────────────────────────────────────────────
+keybind = cmd+k=clear_screen
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+shift+z=toggle_split_zoom
+keybind = cmd+alt+arrow_left=goto_split:left
+keybind = cmd+alt+arrow_right=goto_split:right
+keybind = cmd+alt+arrow_up=goto_split:up
+keybind = cmd+alt+arrow_down=goto_split:down
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+right_bracket=next_tab
+keybind = global:cmd+grave=toggle_quick_terminal
+
+# Machine-specific overrides, if any.
+config-file = ?"~/.config/ghostty/local.conf"

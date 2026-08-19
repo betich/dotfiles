@@ -1,0 +1,24 @@
+# Identity and signing keys are machine-specific: put them in ~/.gitconfig.local
+# (see git/gitconfig.local.example).
+[include]
+	path = ~/.gitconfig.local
+
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[core]
+	excludesfile = ~/.gitignore_global
+[diff]
+	algorithm = histogram
+[gpg]
+	program = gpg
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	lg = log --oneline --decorate --graph --all

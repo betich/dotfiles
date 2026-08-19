@@ -1,0 +1,6 @@
+[user]
+	name = your-name
+	email = you@example.com
+	# signingkey = <gpg key id>
+# [commit]
+# 	gpgsign = true

@@ -1,0 +1,88 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Trimmed to the languages and context that actually show up in my work.
+# Everything else falls back to starship's defaults (and stays disabled below).
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$bun\
+$golang\
+$c\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = true
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+read_only = " 󰌾"
+
+[git_branch]
+format = '[$symbol$branch]($style) '
+symbol = " "
+style = "bold purple"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style)) '
+style = "bold yellow"
+
+[cmd_duration]
+format = '[󱎫 $duration]($style) '
+style = "dimmed white"
+min_time = 2000
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+# ── Languages ─────────────────────────────────────────────────────────────────
+[python]
+format = '[$symbol($virtualenv )]($style)'
+symbol = " "
+style = "yellow"
+
+[nodejs]
+format = '[$symbol]($style)'
+symbol = " "
+style = "green"
+detect_files = ["package.json", ".nvmrc"]
+
+[bun]
+format = '[$symbol]($style)'
+symbol = "󰚭 "
+style = "peach"
+
+[golang]
+format = '[$symbol]($style)'
+symbol = " "
+style = "cyan"
+
+[c]
+format = '[$symbol]($style)'
+symbol = " "
+style = "blue"
+detect_files = ["platformio.ini", "CMakeLists.txt", "Makefile"]
+
+# ── Off: noise I never read ───────────────────────────────────────────────────
+[aws]
+disabled = true
+[gcloud]
+disabled = true
+[package]
+disabled = true
+[docker_context]
+disabled = true
+[battery]
+disabled = true
+[hostname]
+disabled = true
+[username]
+disabled = true

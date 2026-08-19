@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  // Only settings I actually deviate on. Everything else stays at cmux's
+  // defaults so upgrades don't fight this file.
+
+  "app": {
+    "appearance": "system",
+    "confirmQuit": "always",
+    "openMarkdownInCmuxViewer": true,
+    "workspaceInheritWorkingDirectory": true
+  },
+
+  "terminal": {
+    "autoResumeAgentSessions": true,
+    "copyOnSelect": false,
+    "showScrollBar": true,
+    "textBoxSubmitActions": [
+      {
+        "id": "claude",
+        "kind": "commandTemplate",
+        "title": "Claude Dangerous",
+        "commandTemplate": "claude --dangerously-skip-permissions -- {{prompt}}",
+        "assetName": "AgentIcons/Claude",
+        "systemImage": "sparkle",
+        "backgroundColorHex": "#F6D5C8"
+      },
+      {
+        "id": "codex",
+        "kind": "commandTemplate",
+        "title": "Codex --yolo",
+        "commandTemplate": "codex --yolo -- {{prompt}}",
+        "assetName": "AgentIcons/Codex",
+        "systemImage": "sparkles",
+        "backgroundColorHex": "#8FDBFF"
+      }
+    ]
+  },
+
+  "automation": {
+    "claudeCodeIntegration": true,
+    "suppressSubagentNotifications": true
+  },
+
+  "sidebar": {
+    "showPullRequests": true,
+    "showPorts": true,
+    "watchGitStatus": true
+  },
+
+  "notifications": {
+    "dockBadge": true,
+    "paneFlash": true
+  }
+}
