@@ -1,7 +1,5 @@
 # Essential terminal setup. Anything not needed for a working shell lives elsewhere.
 
-tap "homebrew/bundle"
-
 # Core shell experience
 brew "starship"                 # prompt
 brew "zoxide"                   # smarter cd
